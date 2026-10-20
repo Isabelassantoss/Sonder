@@ -15,11 +15,11 @@ require_once __DIR__ . '/../includes/functions.php';
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="/Sonder/assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
 
     <title>Entrar - Sonder</title>
 
-    <link rel="stylesheet" href="Sonder/style/login.css">
+    <link rel="stylesheet" href="../style/login.css">
 
 </head>
 
@@ -34,7 +34,7 @@ require_once __DIR__ . '/../includes/functions.php';
 
             <a href="../index.php">
 
-                <img class="logo" src="/Sonder/imagens/logo.png" alt="Logo Sonder">
+                <img class="logo" src="../imagens/logo.png" alt="Logo Sonder">
 
             </a>
 
