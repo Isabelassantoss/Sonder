@@ -183,7 +183,7 @@ sudo -u postgres psql -c "CREATE USER sonder_user WITH PASSWORD 'sonder123';"
 Agora, crie o banco de dados `sonder`:
 
 ```bash
-sudo -u postgres psql -c "CREATE DATABASE sonder OWNER TO sonder_user;"
+sudo -u postgres psql -c "CREATE DATABASE sonder OWNER sonder_user;"
 ```
 
 Esses comandos criam o usuário e o banco de dados utilizados pelo projeto.
