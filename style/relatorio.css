@@ -1,0 +1,342 @@
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111315;
+    color: #e8e8e8;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   PÁGINA
+========================= */
+
+
+
+.pagina-relatorio {
+    width: 50%;
+    max-width: 850px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    position: relative;
+}
+
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.pagina-relatorio h1 {
+    font-size: 34px;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+.pagina-relatorio > p {
+    color: #8f9499;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CARD DA AVALIAÇÃO
+========================= */
+
+.avaliacao {
+    background-color: #191c1f;
+
+    border: 1px solid #2b3034;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+    transition: 0.2s;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.avaliacao:hover {
+    border-color: #45404f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   USUÁRIO
+========================= */
+
+.usuario {
+    color: #72aaa7;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+.avaliacao h2 {
+    color: #ffffff;
+
+    font-size: 23px;
+
+    margin-bottom: 6px;
+}
+
+
+/* =========================
+   ARTISTA
+========================= */
+
+.artista {
+    color: #b5b5ba;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   ÁLBUM
+========================= */
+
+.album {
+    color: #777d82;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   NOTA
+========================= */
+
+.nota {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    background-color: #27212f;
+
+    border: 1px solid #40364d;
+
+    border-radius: 6px;
+
+    color: #b99bd8;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   COMENTÁRIO
+========================= */
+
+.comentario {
+    color: #d0d0d3;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    padding-left: 15px;
+
+    border-left: 2px solid #73569c;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   EXCLUIR
+========================= */
+
+.excluir {
+    display: inline-block;
+
+    color: #e27777;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    transition: 0.2s;
+}
+
+.excluir:hover {
+    background-color: #302023;
+
+    color: #ff8c8c;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+.acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   EDITAR
+========================= */
+
+.editar {
+    display: inline-block;
+
+    color: #b99bd8;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    transition: 0.2s;
+}
+
+.editar:hover {
+    background-color: #27212f;
+
+    color: #d2b8ed;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.botao-voltar {
+    display: block;
+
+    width: fit-content;
+
+    margin: 30px auto 0;
+
+    padding: 11px 22px;
+
+    background-color: #73569c;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.botao-voltar:hover {
+    background-color: #8669b0;
+
+    transform: translateY(-1px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0d0f10;
+
+    border-top: 3x solid #292d30;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #666e73;
+
+    font-size: 20;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .pagina-relatorio {
+        width: 95%;
+
+        padding: 20px 5px;
+
+        margin: 30px auto;
+    }
+
+    .pagina-relatorio h1 {
+        font-size: 28px;
+    }
+
+    .avaliacao {
+        padding: 20px;
+    }
+
+    .avaliacao h2 {
+        font-size: 20px;
+    }
+}
+

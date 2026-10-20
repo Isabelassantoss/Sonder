@@ -1,0 +1,214 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #101014;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0; /* Remove o padding que causava o espaço vazio */
+}
+
+
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0; /* Move o espaçamento vertical para cá */
+    flex: 1; 
+}
+
+
+/* =========================
+   ÁREA DE BOAS-VINDAS
+========================= */
+
+header {
+    background: #151519;
+    border: 1px solid #303038;
+    border-radius: 22px;
+    padding: 25px 30px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    margin-bottom: 25px;
+}
+
+header img {
+    width: 110px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+
+/* =========================
+   ÁREA DAS OPÇÕES
+========================= */
+
+main > section,
+.opcoes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: #17171c;
+    border: 1px solid #303038;
+    border-radius: 18px;
+    padding: 30px 25px;
+    width: 320px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #7357b8;
+    box-shadow: 0 10px 30px rgba(91, 70, 150, 0.20);
+}
+
+.card h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   ÍCONES
+========================= */
+
+.card .icone {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    color: #7357b8;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #9b82df;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   BOTÃO SAIR
+========================= */
+
+a.sair {
+    display: block;
+    width: fit-content;
+
+    margin: 40px auto 0;
+    padding: 11px 18px;
+
+    background-color: #73569c;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+a.sair:hover {
+    background-color: #8669b0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0d0f10;
+    border-top: 2px solid #292d30;
+    text-align: center;
+    padding: 12px 20px; /* Reduz ligeiramente a altura interna */
+    color: #666e73;
+    font-size: 20px;
+    width: 100%; /* Garante que ele ocupe toda a largura da tela */
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

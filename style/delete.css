@@ -1,0 +1,151 @@
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111315;
+    color: #e8e8e8;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   CAIXA DE EXCLUSÃO
+========================= */
+
+.container-delete {
+    width: 90%;
+    max-width: 500px;
+    background: #181b1e;
+    border: 1px solid #292d31;
+    border-radius: 12px;
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   ÍCONE
+========================= */
+
+.icone-delete {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.container-delete h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.container-delete p {
+    color: #aeb3b7;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+/* Botão excluir */
+
+.btn-excluir {
+    background: #e85d5d;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 12px 22px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-excluir:hover {
+    background: #f06b6b;
+    transform: translateY(-1px);
+}
+
+
+/* Botão cancelar */
+
+.btn-cancelar {
+    background: #292d31;
+    color: #e8e8e8;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    padding: 12px 22px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.btn-cancelar:hover {
+    background: #353a3f;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 500px) {
+
+    .container-delete {
+        padding: 30px 20px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .btn-excluir,
+    .btn-cancelar {
+        width: 100%;
+    }
+}
