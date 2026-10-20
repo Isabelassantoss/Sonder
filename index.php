@@ -91,10 +91,36 @@
                     <h3>Suas avaliações</h3>
 
                     <p>
-                        Dê sua nota e escreva o que achou.
+                        Relembre as músicas que você avaliou e confira suas opiniões.
                     </p>
 
                 </div>
+
+                <div class="card">
+
+                    <img src="/Sonder/imagens/musica4.jpg" alt="Capa de música">
+
+                    <h3>Compartilhe sua opinião</h3>
+
+                    <p>
+                        Avalie suas músicas favoritas e conte o que faz cada uma ser especial.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="/Sonder/imagens/musica5.jpg" alt="Capa de música">
+
+                    <h3>Favoritas da comunidade</h3>
+
+                    <p>
+                        Descubra quais músicas conquistaram outros apaixonados por música.
+                    </p>
+
+                </div>
+
+
 
 
             </div>
