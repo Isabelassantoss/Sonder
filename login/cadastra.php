@@ -13,13 +13,12 @@ require_once __DIR__ . '/../includes/functions.php';
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="icon" type="image/png" href="/Sonder/assets/favicon.png">
 
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
 
     <title>Criar conta - Sonder</title>
 
-    <link rel="stylesheet" href="../style/cadastro.css">
+    <link rel="stylesheet" href="/Sonder/style/cadastro.css">
 
 </head>
 
@@ -29,9 +28,9 @@ require_once __DIR__ . '/../includes/functions.php';
 
         <div class="cadastro">
 
-            <a href="../index.php">
+            <a href="Sonder/index.php">
 
-                <img class="logo"src="../imagens/logo.png"alt="Logo Sonder">
+                <img class="logo"src="/Sonder/imagens/logo.png"alt="Logo Sonder">
 
             </a>
 
@@ -64,7 +63,7 @@ require_once __DIR__ . '/../includes/functions.php';
 
             <p class="login">Já possui uma conta?
 
-                <a href="login.php">Entrar</a>
+                <a href="/Sonder/login.php">Entrar</a>
 
             </p>
 
