@@ -1,5 +1,6 @@
+
 <?php
-$host = '192.168.10.28';
+$host = 'localhost';
 $dbname = 'sonder';
 $user = 'sonder_user';
 $pass = 'sonder123';

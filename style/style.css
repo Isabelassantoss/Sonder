@@ -1,5 +1,5 @@
 /* =========================
-   CONFIGURAÇÕES
+   CONFIGURAÇÕES GERAIS
 ========================= */
 
 * {
@@ -8,319 +8,270 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #111315;
-    color: #e8e8e8;
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+:root {
+    --fundo: #111315;
+    --superficie: #19191c;
+    --superficie-card: #1e1d23;
+    --borda: #303035;
+    --texto: #f2f0f5;
+    --texto-suave: #b2acba;
+    --roxo: #73569c;
+    --roxo-hover: #8669b0;
 }
 
+body {
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
 
 /* =========================
-   HEADER
+   CABEÇALHO
 ========================= */
 
 header {
-    height: 76px;
-    background: #111315;
-    border-bottom: 1px solid #292d30;
+    min-height: 76px;
+    padding: 12px 6%;
+    background: var(--fundo);
+    border-bottom: 1px solid var(--borda);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 48px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 header img {
+    display: block;
     width: 115px;
     height: auto;
 }
 
 nav {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: #d9d9d9;
+    color: var(--texto-suave);
     text-decoration: none;
-
     font-size: 14px;
     font-weight: bold;
-
-    transition: 0.2s;
+    transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #5ab6a4;
+    color: var(--roxo-hover);
 }
 
-
 /* =========================
-   CONTEÚDO
+   CONTEÚDO PRINCIPAL
 ========================= */
 
 main {
-    width: 86%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 50px 0 80px;
+    width: 88%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 65px 0 55px;
 }
-
 
 /* =========================
-   TÍTULO DESCOBERTA
+   APRESENTAÇÃO
 ========================= */
 
-main > section:first-child h2 {
-    color: #eeeeee;
-
-    font-size: 24px;
-    font-weight: 700;
-
-    margin-bottom: 25px;
-
-    text-align: left;
-
-    position: relative;
-    padding-left: 15px;
+.apresentacao {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    text-align: center;
 }
 
-/* detalhe colorido ao lado do título */
-
-main > section:first-child h2::before {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    top: 3px;
-
-    width: 4px;
-    height: 23px;
-
-    border-radius: 10px;
-
-
-    background: linear-gradient(
-        180deg,
-        #7653a8,
-        #3e78a8,
-        #4ca99a
-    );
+.apresentacao h2 {
+    color: var(--texto);
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
 }
 
+.apresentacao p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.9;
+}
 
 /* =========================
-   CARDS
+   BOTÃO PRINCIPAL
 ========================= */
+
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 25px;
+
+    background: var(--roxo);
+    color: #ffffff;
+    border: 1px solid var(--roxo);
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao br {
+    display: none;
+}
+
+.botao:hover {
+    background: var(--roxo-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CARDS DE MÚSICA
+========================= */
+
+.musicas {
+    width: 100%;
+}
 
 .cards {
-    display: flex;
-    gap: 22px;
-
-    justify-content: center;
-
-    margin-top: 40px; /* <--- ADICIONE ESTA LINHA (Ajuste o valor como preferir) */
-    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .card {
-    width: 260px;
-
-    background: #1b1f22;
-
-    border: 1px solid #30363a;
-    border-radius: 5px;
-
+    min-width: 0;
     overflow: hidden;
 
-    transition: 0.25s ease;
+    background: var(--superficie-card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+
+    transition: transform 0.25s, border-color 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-
-    border-color: #a089fb;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.45);
+    transform: translateY(-5px);
+    border-color: var(--roxo);
 }
 
 .card img {
-    width: 100%;
-    height: 190px;
-
-    object-fit: cover;
-
     display: block;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
 }
 
 .card h3 {
-    color: #eeeeee;
-
+    margin: 18px 18px 8px;
+    color: var(--texto);
     font-size: 17px;
-    font-weight: bold;
-
-    margin: 15px 16px 7px;
+    line-height: 1.4;
 }
 
 .card p {
-    color: #9da5aa;
-
-    font-size: 13px;
-    line-height: 1.5;
-
-    margin: 0 16px 18px;
-}
-
-
-/* =========================
-   PARTE "MÚSICA TAMBÉM..."
-========================= */
-
-.introducao {
-    max-width: 800px;
-
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-.introducao h1 {
-    font-size: 35px;
-    font-weight: 700;
-
-    margin-bottom: 26px;
-
-    color: #eeeeee;
-
-    /* degradê da logo */
-
-    background: linear-gradient(
-        90deg,
-        #7653a8,
-        #3e78a8,
-        #4ca99a
-    );
-
-    
-    -webkit-text-fill-color: transparent;
-    
-}
-
-.introducao p {
-    color: #aeb4b8;
-
-    font-size: 15px;
+    margin: 0 18px 20px;
+    color: var(--texto-suave);
+    font-size: 14px;
     line-height: 1.7;
-
-    max-width: 780px;
-    margin: auto;
 }
-
 
 /* =========================
-   BOTÃO
-========================= */
-
-button,
-.btn {
-    display: inline-block;
-
-    margin-top: 25px;
-
-    background: linear-gradient(
-        90deg,
-        #7653a8,
-        #734c91
-    );
-
-    color: white;
-
-    border: none;
-    border-radius: 4px;
-
-    padding: 10px 20px;
-
-    font-size: 13px;
-    font-weight: bold;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-button:hover,
-.btn:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 5px 15px rgba(76, 143, 145, 0.25);
-}
-
-
-/* =========================
-   LINKS
-========================= */
-
-a {
-    color: #b78af7;
-}
-
-a:hover {
-    color: #7bcaac;
-}
-
-
-/* =========================
-   FOOTER
+   RODAPÉ
 ========================= */
 
 footer {
-    background: #0d0f10;
-
-    border-top: 3x solid #292d30;
-
+    background: #0d0e10;
+    border-top: 1px solid var(--borda);
     text-align: center;
-
-    padding: 25px;
-
-    color: #666e73;
-
-    font-size: 20;
+    padding: 24px 16px;
+    color: #918b99;
+    font-size: 13px;
 }
 
-
 /* =========================
-   RESPONSIVO
+   ACESSIBILIDADE
 ========================= */
 
-@media (max-width: 800px) {
+a:focus-visible {
+    outline: 2px solid var(--roxo-hover);
+    outline-offset: 4px;
+}
 
-    header {
-        padding: 0 20px;
-    }
+/* =========================
+   TABLETS
+========================= */
 
-    nav {
-        gap: 12px;
-    }
-
+@media (max-width: 850px) {
     main {
-        width: 92%;
+        width: 90%;
+        padding-top: 45px;
     }
 
     .cards {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
     }
 
-    .card {
-        width: 250px;
+    .card img {
+        height: 180px;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 560px) {
+    header {
+        justify-content: center;
+        padding: 18px 5%;
     }
 
-    .introducao h1 {
-        font-size: 25px;
+    nav {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    main {
+        width: 90%;
+        padding-top: 38px;
+    }
+
+    .apresentacao {
+        margin-bottom: 42px;
+    }
+
+    .apresentacao h2 {
+        font-size: 30px;
+    }
+
+    .apresentacao p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .botao {
+        padding: 12px 20px;
     }
 }

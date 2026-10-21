@@ -1,3 +1,4 @@
+
 /* =========================
    CONFIGURAÇÕES GERAIS
 ========================= */
@@ -9,58 +10,80 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #101014;
-    color: #ffffff;
     min-height: 100vh;
-    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0; /* Remove o padding que causava o espaço vazio */
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111315;
+    color: #f2f0f5;
 }
 
-
-
 /* =========================
-   CONTAINER PRINCIPAL
+   CONTEÚDO PRINCIPAL
 ========================= */
 
 main {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 0; /* Move o espaçamento vertical para cá */
-    flex: 1; 
+    padding: 45px 0;
+    flex: 1;
 }
 
-
 /* =========================
-   ÁREA DE BOAS-VINDAS
+   CABEÇALHO
 ========================= */
 
 header {
-    background: #151519;
-    border: 1px solid #303038;
-    border-radius: 22px;
-    padding: 25px 30px;
+    background:
+        radial-gradient(ellipse at top, #292033 0%, #1c1922 65%, #19191c 100%);
+    border: 1px solid #393142;
+    border-radius: 18px;
+    padding: 36px 25px;
     text-align: center;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe decorativo no topo */
+header::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 0 auto 24px;
+    background: #8669b0;
+    border-radius: 10px;
 }
 
 header img {
-    width: 110px;
-    margin-bottom: 18px;
+    display: block;
+    width: 115px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    transition: transform 0.25s ease;
+}
+
+header img:hover {
+    transform: scale(1.04);
 }
 
 header h1 {
+    color: #f8f5fc;
     font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.6px;
 }
 
+header p {
+    color: #c0b5ce;
+    font-size: 15px;
+    line-height: 1.8;
+}
 
 /* =========================
    ÁREA DAS OPÇÕES
@@ -71,72 +94,101 @@ main > section,
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 25px;
+    gap: 22px;
     flex-wrap: wrap;
 }
-
 
 /* =========================
    CARDS
 ========================= */
 
 .card {
-    background: #17171c;
-    border: 1px solid #303038;
-    border-radius: 18px;
-    padding: 30px 25px;
-    width: 320px;
+    flex: 1 1 280px;
+    max-width: 340px;
+    min-width: 0;
+    padding: 32px 25px;
+    background: linear-gradient(145deg, #1d1b22, #19191e);
+    border: 1px solid #34313a;
+    border-radius: 14px;
     text-align: center;
-    transition: 0.3s ease;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: #7357b8;
-    box-shadow: 0 10px 30px rgba(91, 70, 150, 0.20);
+    transform: translateY(-4px);
+    background: linear-gradient(145deg, #221d2a, #1b1920);
+    border-color: #73569c;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
 }
 
 .card h2 {
-    color: #ffffff;
-    font-size: 24px;
+    color: #f2edf9;
+    font-size: 21px;
     margin-bottom: 12px;
+    letter-spacing: -0.3px;
 }
 
 .card p {
-    color: #cccccc;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    color: #b9b1c2;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
 }
-
 
 /* =========================
    ÍCONES
 ========================= */
 
 .card .icone {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 17px;
+    filter: drop-shadow(0 3px 8px rgba(115, 86, 156, 0.18));
 }
 
-
 /* =========================
-   LINKS
+   LINKS E BOTÕES
 ========================= */
 
 a {
-    color: #7357b8;
-    font-size: 18px;
-    font-weight: 600;
+    color: #b69add;
+    font-size: 15px;
+    font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #9b82df;
-    text-decoration: underline;
+    color: #d0b8f3;
 }
 
+/* Botões dentro dos cards */
+
+.card a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #73569c;
+    color: #ffffff;
+    border: 1px solid #73569c;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.card a:hover {
+    background: #8669b0;
+    border-color: #8669b0;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
 
 /* =========================
    BOTÃO SAIR
@@ -145,70 +197,116 @@ a:hover {
 a.sair {
     display: block;
     width: fit-content;
-
-    margin: 40px auto 0;
-    padding: 11px 18px;
-
-    background-color: #73569c;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 6px;
-
-    font-size: 14px;
+    margin: 32px auto 0;
+    padding: 11px 24px;
+    background: #17161b;
+    color: #c6becf;
+    border: 1px solid #403a49;
+    border-radius: 7px;
+    font-size: 13px;
     font-weight: bold;
-
-    transition: 0.2s;
+    text-align: center;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
 }
 
 a.sair:hover {
-    background-color: #8669b0;
+    background: #29212f;
+    border-color: #73569c;
+    color: #e0d0f5;
+    text-decoration: none;
 }
 
-
 /* =========================
-   FOOTER
+   RODAPÉ
 ========================= */
 
 footer {
-    background: #0d0f10;
-    border-top: 2px solid #292d30;
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 15px;
+    background: #0d0e10;
+    border-top: 1px solid #303035;
+    color: #918b99;
+    font-size: 13px;
+    line-height: 1.6;
     text-align: center;
-    padding: 12px 20px; /* Reduz ligeiramente a altura interna */
-    color: #666e73;
-    font-size: 20px;
-    width: 100%; /* Garante que ele ocupe toda a largura da tela */
 }
 
 /* =========================
-   RESPONSIVIDADE
+   TABLETS
 ========================= */
 
-@media (max-width: 700px) {
-
-    body {
-        padding: 20px 10px;
-    }
-
+@media (max-width: 800px) {
     main {
-        width: 95%;
+        width: 92%;
+        padding: 35px 0;
     }
 
-    header {
-        padding: 25px 15px;
-    }
-
-    header h1 {
-        font-size: 32px;
-    }
-
-    header p {
-        font-size: 18px;
+    main > section,
+    .opcoes {
+        gap: 18px;
     }
 
     .card {
-        width: 100%;
+        flex-basis: 260px;
     }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 560px) {
+    main {
+        width: 92%;
+        padding: 25px 0;
+    }
+
+    header {
+        padding: 30px 18px;
+        margin-bottom: 25px;
+        border-radius: 13px;
+    }
+
+    header::before {
+        margin-bottom: 20px;
+    }
+
+    header img {
+        width: 100px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        max-width: none;
+        padding: 27px 20px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    a.sair {
+        margin-top: 25px;
+    }
+}
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+
+a:focus-visible {
+    outline: 2px solid #b69add;
+    outline-offset: 4px;
 }

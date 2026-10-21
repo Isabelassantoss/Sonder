@@ -1,189 +1,134 @@
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #111113;
-    color: white;
+html {
+    min-height: 100%;
 }
 
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(ellipse at top, #21192b 0%, #111113 48%);
+    color: #f5f2f8;
+}
+
+/* Página */
 .pagina-cadastro {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding: 55px 20px;
 }
 
+/* Formulário */
 .cadastro-musica {
-    width: 520px;
-    padding: 40px;
-    background-color: #19191c;
-    border-radius: 18px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 530px;
+    padding: 38px 42px;
+    background-color: #19171f;
+    border: 1px solid #342b40;
+    border-radius: 14px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
 }
 
+/* Logo */
 .logo {
     display: block;
-    width: 100px;
-    margin: 0 auto 20px;
+    width: 88px;
+    height: auto;
+    margin: 0 auto 24px;
 }
 
+/* Título */
 .cadastro-musica h1 {
-    text-align: center;
     margin: 0;
-    font-size: 30px;
+    color: #f7f2fc;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
 }
 
 .subtitulo {
+    margin: 12px 0 32px;
+    color: #aaa1b5;
     text-align: center;
-    color: #99999f;
-    margin: 10px 0 35px;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
+/* Formulário e campos */
 .cadastro-musica form {
     text-align: left;
 }
 
 .cadastro-musica label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
+    margin-bottom: 9px;
+    color: #e7dfef;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .cadastro-musica input[type="text"],
 .cadastro-musica input[type="number"],
 .cadastro-musica textarea {
+    display: block;
     width: 100%;
-    padding: 13px;
-    margin-bottom: 22px;
-    background-color: #222225;
-    color: white;
-    border: 1px solid #3a3a40;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
+    padding: 13px 14px;
+    margin-bottom: 23px;
+    background-color: #121116;
+    color: #f5f2f8;
+    border: 1px solid #393340;
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cadastro-musica input[type="text"]::placeholder,
+.cadastro-musica textarea::placeholder {
+    color: #77717f;
 }
 
 .cadastro-musica input[type="text"]:focus,
 .cadastro-musica input[type="number"]:focus,
 .cadastro-musica textarea:focus {
-    border-color: #73569c;
+    outline: none;
+    border-color: #9673bc;
+    box-shadow: 0 0 0 3px rgba(115, 86, 156, 0.16);
 }
 
 .cadastro-musica textarea {
-    height: 130px;
+    min-height: 120px;
     resize: vertical;
+    line-height: 1.6;
 }
 
+/* Nota */
 .nota-area {
-    margin-bottom: 5px;
+    margin-bottom: 24px;
 }
 
 .nota-area p {
-    color: #99999f;
+    margin: 0 0 12px;
+    color: #aaa1b5;
     font-size: 13px;
-    margin-top: -15px;
+    line-height: 1.5;
 }
 
-.cadastro-musica input[type="submit"] {
-    width: 100%;
-    padding: 14px;
-    margin-top: 5px;
-    background-color: #73569c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.cadastro-musica input[type="submit"]:hover {
-    background-color: #8669b0;
-}
-
-
-/* =========================
-   BOTÃO VOLTAR
-========================= */
-
-.voltar {
-    display: block;
-    width: fit-content;
-    margin: 25px auto 0;
-    padding: 11px 18px;
-
-    background-color: #73569c;
-    color: white;
-
-    border-radius: 6px;
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.voltar:hover {
-    background-color: #8669b0;
-}
-
-
-/* =========================
-   MENSAGEM
-========================= */
-
-.mensagem {
-    margin-top: 20px;
-    padding: 12px;
-    text-align: center;
-    background-color: #1f3433;
-    color: #8bc5c1;
-    border: 1px solid #315957;
-    border-radius: 8px;
-}
-
-
-/* =========================
-   BOTÃO AVALIAÇÕES
-========================= */
-
-.avaliacoes {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
-    padding: 12px;
-    text-align: center;
-    background-color: #222225;
-    color: white;
-    border: 1px solid #3a3a40;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.avaliacoes:hover {
-    background-color: #303035;
-}
-
-
-/* =========================
-   ESTRELAS DA NOTA
-========================= */
-
+/* Estrelas */
 .estrelas {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    gap: 5px;
-    margin-bottom: 22px;
+    gap: 7px;
+    margin: 8px 0 20px;
 }
 
 .estrelas input {
@@ -193,33 +138,145 @@ body {
 .estrelas label {
     display: block;
     margin: 0;
+    color: #625b6b;
     font-size: 35px;
-    color: #555;
+    line-height: 1;
     cursor: pointer;
-    transition: 0.2s;
+    transition: color 0.2s, transform 0.2s;
 }
 
 .estrelas label:hover,
 .estrelas label:hover ~ label,
 .estrelas input:checked ~ label {
-    color: #f5c518;
+    color: #f5c45e;
 }
 
+.estrelas label:hover {
+    transform: scale(1.12);
+}
 
-/* =========================
-   FOOTER
-========================= */
+/* Botão salvar avaliação */
+.cadastro-musica input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin-top: 8px;
+    background-color: #7957a1;
+    color: #ffffff;
+    border: 1px solid #8968b0;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
 
-footer {
-    background: #0d0f10;
+.cadastro-musica input[type="submit"]:hover {
+    background-color: #8b68b4;
+    transform: translateY(-1px);
+}
 
-    border-top: 3px solid #292d30;
+.cadastro-musica input[type="submit"]:active {
+    transform: translateY(0);
+}
 
+/* Botão voltar */
+.voltar {
+    display: block;
+    width: fit-content;
+    margin: 22px auto 0;
+    padding: 10px 18px;
+    background-color: transparent;
+    color: #c9b5e0;
+    border: 1px solid #4a3a5b;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.voltar:hover {
+    background-color: #292032;
+    border-color: #7957a1;
+}
+
+/* Mensagem */
+.mensagem {
+    margin-top: 20px;
+    padding: 13px 15px;
     text-align: center;
+    background-color: #211b2a;
+    color: #d8c3ee;
+    border: 1px solid #49365d;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 1.6;
+}
 
-    padding: 25px;
+/* Botão ver avaliações */
+.avaliacoes {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    text-align: center;
+    background-color: #211d27;
+    color: #e0d2ef;
+    border: 1px solid #393040;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s, border-color 0.2s;
+}
 
-    color: #666e73;
+.avaliacoes:hover {
+    background-color: #2c2337;
+    border-color: #7957a1;
+}
 
-    font-size: 20px;
+/* Rodapé */
+footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 22px 20px;
+    background-color: #151419;
+    border-top: 1px solid #302b38;
+    text-align: center;
+    color: #aaa0b5;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .pagina-cadastro {
+        padding: 25px 14px;
+    }
+
+    .cadastro-musica {
+        padding: 30px 22px;
+        border-radius: 11px;
+    }
+
+    .cadastro-musica h1 {
+        font-size: 25px;
+    }
+
+    .logo {
+        width: 76px;
+    }
+
+    .estrelas label {
+        font-size: 32px;
+    }
+
+    footer {
+        padding: 18px 12px;
+    }
 }

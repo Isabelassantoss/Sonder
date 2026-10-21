@@ -10,6 +10,8 @@ require_once __DIR__ . '/../includes/functions.php';
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/Sonder/assets/favicon.png">
+    
 
     <link rel="stylesheet" href="/Sonder/style/relatorio.css">
 
@@ -28,18 +30,15 @@ require_once __DIR__ . '/../includes/functions.php';
         Músicas que já foram avaliadas no Sonder.
     </p>
 
-    <?php
+    <?php estatisticas($conexao); ?>
 
-    relatorio($conexao, $_SESSION['id']);
-
-    ?>
+    <?php relatorio($conexao, $_SESSION['id']);?>
 
 </main>
 
-<a href="home.php" class="botao-voltar"> Voltar </a>
+<a href="home.php" class="botao-voltar">Voltar</a>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 
 </body>
-
 </html>

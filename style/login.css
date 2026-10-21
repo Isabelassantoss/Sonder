@@ -1,82 +1,66 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-
-    font-family: Arial, sans-serif;
-
-    background-color: #111113;
-
-    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111315;
+    color: #f2f0f5;
 }
-
 
 /* ÁREA DO LOGIN */
 
 .pagina-login {
     min-height: 100vh;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
-    padding: 40px 20px;
+    padding: 30px 20px;
 }
 
-
-/* CAIXA */
+/* CAIXA DO LOGIN */
 
 .login-box {
-    width: 400px;
-
-    padding: 35px;
-
+    width: 100%;
+    max-width: 400px;
+    padding: 38px;
     background-color: #19191c;
-
     border: 1px solid #303035;
-
-    border-radius: 12px;
-
+    border-radius: 14px;
     text-align: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
-
 
 /* LOGO */
 
 .login-box .logo {
-    width: 130px;
-
-    height: auto;
-
     display: block;
-
-    margin: 0 auto 20px;
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 22px;
 }
-
 
 /* TÍTULO */
 
 .login-box h1 {
     margin: 0 0 10px;
-
     font-size: 30px;
+    letter-spacing: -0.5px;
 }
 
-
-/* TEXTO */
+/* SUBTÍTULO */
 
 .subtitulo {
-    margin-bottom: 30px;
-
-    color: #99999f;
-
+    margin: 0 0 30px;
+    color: #b2acba;
     font-size: 14px;
+    line-height: 1.6;
 }
-
 
 /* FORMULÁRIO */
 
@@ -84,115 +68,106 @@ body {
     text-align: left;
 }
 
-
-/* LABEL */
+/* RÓTULOS */
 
 .login-box label {
     display: block;
-
-    margin-bottom: 7px;
-
-    font-size: 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #e4dfea;
 }
-
 
 /* CAMPOS */
 
 .login-box input[type="email"],
 .login-box input[type="password"] {
     width: 100%;
-
-    padding: 12px;
-
-    margin-bottom: 20px;
-
+    padding: 13px 14px;
+    margin-bottom: 22px;
     background-color: #222225;
-
-    color: white;
-
+    color: #f5f3f8;
     border: 1px solid #3a3a40;
-
-    border-radius: 6px;
-
+    border-radius: 7px;
+    font-size: 14px;
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 
 /* CAMPO SELECIONADO */
 
 .login-box input[type="email"]:focus,
 .login-box input[type="password"]:focus {
-    border-color: #72aaa7;
+    border-color: #8669b0;
+    box-shadow: 0 0 0 3px rgba(115, 86, 156, 0.2);
 }
 
-
-/* BOTÃO */
+/* BOTÃO ENTRAR */
 
 .login-box input[type="submit"] {
     width: 100%;
-
-    padding: 12px;
-
+    padding: 13px;
     background-color: #73569c;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 6px;
-
+    color: #ffffff;
+    border: 1px solid #73569c;
+    border-radius: 7px;
     font-size: 15px;
-
     font-weight: bold;
-
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
-
 
 .login-box input[type="submit"]:hover {
     background-color: #8669b0;
+    transform: translateY(-2px);
 }
 
-
-/* CADASTRO */
+/* LINK PARA CADASTRO */
 
 .cadastro {
-    margin-top: 25px;
-
-    color: #99999f;
-
+    margin: 25px 0 0;
+    color: #b2acba;
     font-size: 14px;
+    line-height: 1.7;
 }
-
 
 .cadastro a {
-    color: #72aaa7;
-
+    color: #b69add;
     text-decoration: none;
-
     font-weight: bold;
+    transition: color 0.2s;
 }
-
 
 .cadastro a:hover {
-    color: #8bc5c1;
+    color: #d0b8f3;
+    text-decoration: underline;
 }
-
 
 /* MENSAGEM DE ERRO */
 
 .mensagem-erro {
     margin-top: 20px;
-
-    padding: 10px;
-
+    padding: 12px;
     background-color: #382326;
-
     color: #e7a6ae;
-
     border: 1px solid #61343b;
-
-    border-radius: 6px;
-
+    border-radius: 7px;
     font-size: 14px;
+    line-height: 1.5;
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    .pagina-login {
+        padding: 20px 15px;
+    }
+
+    .login-box {
+        padding: 28px 22px;
+    }
+
+    .login-box h1 {
+        font-size: 26px;
+    }
 }

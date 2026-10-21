@@ -7,10 +7,14 @@ Plataforma web para avaliar, comentar e descobrir músicas, desenvolvida com PHP
 1. [Sobre o projeto](#-1-sobre-o-projeto)
 2. [Funcionalidades](#-2-funcionalidades)
 3. [Tecnologias utilizadas](#-3-tecnologias-utilizadas)
-4. [Banco de dados](#-4-banco-de-dados)
-5. [Organização dos arquivos](#-5-organização-dos-arquivos)
-6. [Como executar o projeto](#-6-como-executar-o-projeto)
-7. [Testando o sistema](#-7-testando-o-sistema)
+4. [Requisitos funcionais](#-4-requisitos-funcionais)
+5. [Requisitos não funcionais](#-5-requisitos-não-funcionais)
+6. [Banco de dados](#-6-banco-de-dados)
+7. [Organização dos arquivos](#-7-organização-dos-arquinos)
+8. [Como executar o projeto](#-8-como-executar-o-projeto)
+9. [Testando o sistema](#-9-testando-o-sistema)
+
+
 
 ---
 
@@ -28,14 +32,14 @@ O site possui um visual escuro, detalhes em roxo e elementos inspirados no unive
 
 O Sonder possui as seguintes funcionalidades:
 
-- 👤 Cadastro de usuários.
-- 🔐 Login e logout.
-- 🎶 Cadastro de músicas e avaliações.
-- ⭐ Notas de 0 a 5 estrelas.
-- 💬 Comentários sobre as músicas.
-- 📋 Consulta de avaliações.
-- ✏️ Edição de avaliações.
-- 🗑️ Exclusão de avaliações.
+- Cadastro de usuários.
+- Login e logout.
+- Cadastro de músicas e avaliações.
+- Notas de 0 a 5 estrelas.
+- Comentários sobre as músicas.
+- Consulta de avaliações.
+- Edição de avaliações.
+- Exclusão de avaliações.
 
 ## 💻 3. Tecnologias utilizadas
 
@@ -50,7 +54,7 @@ O Sonder possui as seguintes funcionalidades:
 | VS Code | Edição dos arquivos. |
 | MobaXterm | Acesso ao servidor remoto, quando necessário. |
 
-## 📋 3. Requisitos funcionais
+## 📋 4. Requisitos funcionais
 
 Os requisitos funcionais descrevem o que o sistema permite fazer.
 
@@ -68,7 +72,7 @@ Os requisitos funcionais descrevem o que o sistema permite fazer.
 | RF10 | Identificação do usuário | Relacionar cada avaliação ao usuário responsável. |
 | RF11 | Logout | Permitir sair da conta. |
 
-## ⚙️ 4. Requisitos não funcionais
+## ⚙️ 5. Requisitos não funcionais
 
 Os requisitos não funcionais descrevem características de funcionamento, aparência e organização do sistema.
 
@@ -83,7 +87,7 @@ Os requisitos não funcionais descrevem características de funcionamento, apar�
 | RNF07 | Manutenção | Facilitar a localização e a alteração dos arquivos. |
 | RNF08 | Compatibilidade | Permitir a execução em um ambiente com PHP e PostgreSQL configurados. |
 
-## 🗄️ 5. Banco de dados
+## 🗄️ 6. Banco de dados
 
 O projeto utiliza o PostgreSQL e um banco de dados chamado `sonder`.
 
@@ -107,7 +111,7 @@ Armazena os dados das avaliações:
 
 O campo `usuario_id` relaciona as avaliações aos usuários cadastrados.
 
-## 📁 6. Organização dos arquivos
+## 📁 7. Organização dos arquivos
 
 O projeto está dividido em pastas para facilitar a localização dos arquivos.
 
@@ -142,11 +146,11 @@ Sonder/
 - `index.php`: página inicial.
 - `documentacao.md`: documentação do projeto.
 
-## 🚀 7. Como executar o projeto
+## 🚀 8. Como executar o projeto
 
 Siga os passos abaixo para baixar e executar o Sonder no seu computador.
 
-### 7.1. O que você precisa
+### 8.1. O que você precisa
 
 Antes de começar, instale ou tenha acesso a:
 
@@ -158,7 +162,7 @@ Antes de começar, instale ou tenha acesso a:
 
 O MobaXterm pode ser utilizado para acessar um servidor remoto, caso o banco de dados esteja em outra máquina.
 
-### 7.2. Baixar os arquivos
+### 8.2. Baixar os arquivos
 
 Abra o terminal do VS Code ou o PowerShell e execute:
 
@@ -172,7 +176,7 @@ Entre na pasta do projeto:
 cd Sonder
 ```
 
-### 7.3. Criar o usuário e o banco de dados 🗄️
+### 8.3. Criar o usuário e o banco de dados 🗄️
 
 No terminal do Linux, execute o comando abaixo para acessar o PostgreSQL e criar o usuário `sonder_user`:
 
@@ -190,7 +194,7 @@ Esses comandos criam o usuário e o banco de dados utilizados pelo projeto.
 
 **Importante:** se o usuário ou o banco já existir, não execute os comandos novamente. Utilize as configurações existentes ou verifique o ambiente antes de continuar.
 
-### 7.4. Restaurar o banco de dados 📥
+### 8.4. Restaurar o banco de dados 📥
 
 Se o arquivo `database/dump.sql` estiver disponível no projeto, execute:
 
@@ -200,7 +204,7 @@ psql -h localhost -U sonder_user -d sonder -f database/dump.sql
 
 Digite a senha do usuário quando for solicitada.
 
-### 7.5. Configurar a conexão 🔗
+### 8.5. Configurar a conexão 🔗
 
 Abra o arquivo `database/connect.php` e confira se os dados de conexão correspondem ao banco criado:
 
@@ -209,7 +213,7 @@ Abra o arquivo `database/connect.php` e confira se os dados de conexão correspo
 - Senha: a senha definida na criação do usuário.
 - Servidor: `localhost`, se o PostgreSQL estiver no próprio computador.
 
-### 7.6. Iniciar o site 🌐
+### 8.6. Iniciar o site 🌐
 
 Na pasta principal do projeto, execute:
 
@@ -222,7 +226,7 @@ Mantenha o terminal aberto e acesse no navegador:
 http://localhost:8000
 
 
-## ✅ 8. Testando o sistema
+## ✅ 9. Testando o sistema
 
 Depois de abrir o site, verifique se é possível:
 
@@ -238,7 +242,7 @@ Se ocorrer algum erro, confira a conexão com o banco de dados e as configuraç�
 
 ---
 
-## 💜 Considerações finais
+## Considerações finais
 
 O Sonder foi desenvolvido para colocar em prática conhecimentos de HTML, CSS, PHP e PostgreSQL.
 O projeto reúne cadastro de usuários, avaliações musicais e gerenciamento de dados em uma plataforma com identidade visual própria.

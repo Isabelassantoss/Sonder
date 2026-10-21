@@ -1,342 +1,485 @@
 
-/* =========================
-   CONFIGURAÇÕES
-========================= */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    background: #111113;
+}
+
 body {
-    background-color: #111315;
-    color: #e8e8e8;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #111113;
+    color: #f4f0f8;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* =========================
-   PÁGINA
-========================= */
-
-
-
+/* CABEÇALHO DO RELATÓRIO */
 .pagina-relatorio {
-    width: 50%;
-    max-width: 850px;
-
-    margin: 40px auto;
-
-    padding: 35px;
-
-    position: relative;
+    width: calc(100% - 36px);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 42px 0 20px;
+    flex: 1;
 }
 
-
-
-/* =========================
-   TÍTULO
-========================= */
-
-.pagina-relatorio h1 {
-    font-size: 34px;
-
-    color: #ffffff;
-
-    margin-bottom: 8px;
+.pagina-relatorio > h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    letter-spacing: -1px;
 }
-
-
-/* =========================
-   SUBTÍTULO
-========================= */
 
 .pagina-relatorio > p {
-    color: #8f9499;
-
-    font-size: 15px;
-
-    margin-bottom: 30px;
+    margin: 0 0 28px;
+    color: #aaa2b3;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
-
-/* =========================
-   CARD DA AVALIAÇÃO
-========================= */
-
+/* PUBLICAÇÃO */
 .avaliacao {
-    background-color: #191c1f;
-
-    border: 1px solid #2b3034;
-
-    border-radius: 10px;
-
-    padding: 25px;
-
-    margin-bottom: 18px;
-
-    transition: 0.2s;
+    margin-bottom: 16px;
+    padding: 22px;
+    background: #19181e;
+    border: 1px solid #302d36;
+    border-radius: 12px;
+    transition: border-color 0.2s;
 }
-
-
-/* Efeito ao passar o mouse */
 
 .avaliacao:hover {
-    border-color: #45404f;
-
-    transform: translateY(-2px);
+    border-color: #73569c;
 }
 
-
-/* =========================
-   USUÁRIO
-========================= */
-
-.usuario {
-    color: #72aaa7;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    margin-bottom: 18px;
+/* USUÁRIO */
+.avaliacao-topo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 21px;
 }
 
-
-/* =========================
-   MÚSICA
-========================= */
-
-.avaliacao h2 {
-    color: #ffffff;
-
-    font-size: 23px;
-
-    margin-bottom: 6px;
+.avatar-usuario {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #30233f;
+    color: #d0b8f3;
+    font-size: 21px;
 }
 
+.dados-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
 
-/* =========================
-   ARTISTA
-========================= */
+.dados-usuario strong {
+    color: #d0b8f3;
+    font-size: 13px;
+}
+
+.dados-usuario span {
+    color: #898291;
+    font-size: 12px;
+}
+
+/* MÚSICA */
+.dados-musica h2 {
+    margin: 0 0 5px;
+    color: #f7f3fc;
+    font-size: 25px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
 
 .artista {
-    color: #b5b5ba;
-
+    margin: 0 0 8px;
+    color: #ddd5e7;
     font-size: 15px;
-
-    margin-bottom: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
 }
-
-
-/* =========================
-   ÁLBUM
-========================= */
 
 .album {
-    color: #777d82;
-
-    font-size: 14px;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================
-   NOTA
-========================= */
-
-.nota {
-    display: inline-block;
-
-    padding: 6px 10px;
-
-    background-color: #27212f;
-
-    border: 1px solid #40364d;
-
-    border-radius: 6px;
-
-    color: #b99bd8;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================
-   COMENTÁRIO
-========================= */
-
-.comentario {
-    color: #d0d0d3;
-
-    font-size: 15px;
-
+    margin: 0;
+    color: #938b9d;
+    font-size: 12px;
     line-height: 1.6;
-
-    padding-left: 15px;
-
-    border-left: 2px solid #73569c;
-
-    margin-bottom: 20px;
+    overflow-wrap: anywhere;
 }
 
-
-/* =========================
-   EXCLUIR
-========================= */
-
-.excluir {
-    display: inline-block;
-
-    color: #e27777;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    padding: 7px 10px;
-
-    border-radius: 5px;
-
-    transition: 0.2s;
+/* ESTRELAS */
+.nota {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin: 19px 0 16px;
+    color: #c7a5ff;
+    font-size: 22px;
 }
 
-.excluir:hover {
-    background-color: #302023;
-
-    color: #ff8c8c;
+.nota .estrela-vazia {
+    color: #51495d;
 }
 
-/* =========================
-   AÇÕES
-========================= */
+.nota small {
+    margin-left: 7px;
+    color: #aaa2b3;
+    font-size: 12px;
+}
 
+/* TEXTO DA AVALIAÇÃO */
+.comentario {
+    margin: 0;
+    padding: 13px 15px;
+    background: #141317;
+    border-left: 3px solid #8060a8;
+    border-radius: 0 7px 7px 0;
+    color: #e0d9e8;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* AÇÕES */
 .acoes {
     display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 5px;
+    gap: 9px;
+    margin-top: 17px;
 }
 
-
-/* =========================
-   EDITAR
-========================= */
-
-.editar {
-    display: inline-block;
-
-    color: #b99bd8;
-
-    font-size: 13px;
-
+.acoes a {
+    padding: 8px 13px;
+    border: 1px solid #443b50;
+    border-radius: 6px;
+    color: #d7c7e9;
+    font-size: 12px;
     font-weight: bold;
-
     text-decoration: none;
-
-    padding: 7px 10px;
-
-    border-radius: 5px;
-
     transition: 0.2s;
 }
 
-.editar:hover {
-    background-color: #27212f;
-
-    color: #d2b8ed;
+.acoes .editar:hover {
+    background: #30233f;
+    border-color: #8669b0;
 }
 
-/* =========================
-   BOTÃO VOLTAR
-========================= */
+.acoes .excluir:hover {
+    background: #382326;
+    border-color: #87434c;
+    color: #ffc1c8;
+}
 
+/* ESTADO VAZIO */
+.sem-avaliacoes {
+    padding: 35px 20px;
+    border: 1px dashed #403649;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.sem-avaliacoes h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.sem-avaliacoes p {
+    color: #aaa2b3;
+    font-size: 14px;
+}
+
+/* VOLTAR */
 .botao-voltar {
     display: block;
-
     width: fit-content;
-
-    margin: 30px auto 0;
-
-    padding: 11px 22px;
-
-    background-color: #73569c;
-
+    margin: 10px auto 28px;
+    padding: 11px 24px;
+    border: 1px solid #8063a5;
+    border-radius: 7px;
+    background: #73569c;
     color: white;
-
-    text-decoration: none;
-
-    border-radius: 6px;
-
-    font-size: 14px;
-
+    font-size: 13px;
     font-weight: bold;
-
-    transition: 0.2s;
+    text-decoration: none;
+    transition: background 0.2s;
 }
 
 .botao-voltar:hover {
-    background-color: #8669b0;
-
-    transform: translateY(-1px);
+    background: #8669b0;
 }
 
-/* =========================
-   FOOTER
-========================= */
 
+/* RODAPÉ SONDER */
 footer {
-    background: #0d0f10;
-
-    border-top: 3x solid #292d30;
-
+    width: 100%;
+    margin-top: auto;
+    padding: 22px 20px;
+    background-color: #151419;
+    border-top: 1px solid #302b38;
     text-align: center;
-
-    padding: 25px;
-
-    color: #666e73;
-
-    font-size: 20;
 }
 
-/* =========================
-   CELULAR
-========================= */
+footer p {
+    margin: 0;
+    color: #aaa0b5;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
 
-@media (max-width: 600px) {
 
-    .pagina-relatorio {
-        width: 95%;
+/* Cada avaliação em sua própria caixa */
+.pagina-relatorio .avaliacao {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 24px;
+    background: #19181e;
+    border: 1px solid #34303a;
+    border-radius: 12px;
+    box-shadow: none;
+}
 
-        padding: 20px 5px;
+/* A caixa externa não deve parecer outro cartão */
+.pagina-relatorio main,
+.pagina-relatorio .lista-avaliacoes,
+.pagina-relatorio .avaliacoes-lista,
+.pagina-relatorio .relatorio-lista {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
 
-        margin: 30px auto;
+/* Comentário dentro do cartão, mas sem envolver outra avaliação */
+.pagina-relatorio .comentario {
+    background: #121116;
+    border-left: 2px solid #73569c;
+    border-radius: 0 7px 7px 0;
+    padding: 14px;
+    margin: 14px 0;
+}
+
+/* Separação entre os botões e a próxima avaliação */
+.pagina-relatorio .acoes {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+
+/* Cada avaliação fica em um cartão separado */
+.avaliacao {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 22px;
+    background-color: #19181e;
+    border: 1px solid #34303a;
+    border-radius: 12px;
+}
+
+/* Espaçamento entre as informações */
+.avaliacao h2 {
+    margin: 14px 0;
+}
+
+.avaliacao .artista,
+.avaliacao .album {
+    margin-bottom: 10px;
+}
+
+/* Comentário dentro do cartão */
+.avaliacao .comentario {
+    margin: 16px 0;
+    padding: 14px;
+    background-color: #121116;
+    border-left: 2px solid #73569c;
+    border-radius: 0 7px 7px 0;
+}
+
+/* Botões de ação */
+.avaliacao .acoes {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+
+/* Título da página de avaliações */
+.pagina-relatorio h1 {
+    margin: 0 0 12px;
+    color: #f5f0fa;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    text-align: center;
+}
+
+/* Subtítulo abaixo do título */
+.pagina-relatorio > p,
+.pagina-relatorio .subtitulo {
+    margin-bottom: 32px;
+    color: #b9afc5;
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Detalhe roxo abaixo do título */
+.pagina-relatorio h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 14px auto 0;
+    background: #8669b0;
+    border-radius: 10px;
+}
+
+
+/* Estatísticas */
+.estatisticas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.estatistica-card {
+    padding: 25px 20px;
+    background: linear-gradient(145deg, #211b2b, #19181e);
+    border: 1px solid #393142;
+    border-radius: 14px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.estatistica-card:hover {
+    transform: translateY(-3px);
+    border-color: #73569c;
+}
+
+.estatistica-card p {
+    margin: 0 0 12px;
+    color: #b9afc5;
+    font-size: 14px;
+}
+
+.estatistica-card h2 {
+    margin: 0;
+    color: #c5a7e8;
+    font-size: 30px;
+}
+
+/* Ranking */
+.ranking-musicas {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #19181e;
+    border: 1px solid #34303a;
+    border-radius: 14px;
+}
+
+.ranking-musicas > h2 {
+    margin: 0 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #34303a;
+    color: #f2edf9;
+    font-size: 21px;
+}
+
+.musica-ranking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 16px;
+    background: #211e27;
+    border: 1px solid #302b38;
+    border-radius: 9px;
+    transition: border-color 0.2s;
+}
+
+.musica-ranking:hover {
+    border-color: #73569c;
+}
+
+.musica-ranking h3 {
+    margin: 0 0 5px;
+    color: #f2edf9;
+    font-size: 16px;
+}
+
+.musica-ranking p {
+    margin: 0;
+    color: #aaa0b5;
+    font-size: 14px;
+}
+
+.musica-ranking p:last-child {
+    color: #f5c518;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media (max-width: 550px) {
+    .estatisticas {
+        grid-template-columns: 1fr;
     }
 
+    .ranking-musicas {
+        padding: 18px;
+    }
+
+    .musica-ranking {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
     .pagina-relatorio h1 {
+        font-size: 28px;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 560px) {
+    .pagina-relatorio {
+        width: calc(100% - 28px);
+        padding-top: 30px;
+    }
+
+    .pagina-relatorio > h1 {
         font-size: 28px;
     }
 
     .avaliacao {
-        padding: 20px;
+        padding: 17px;
     }
 
-    .avaliacao h2 {
+    .dados-musica h2 {
+        font-size: 21px;
+    }
+
+    .nota {
         font-size: 20px;
     }
 }
 
+/* ACESSIBILIDADE */
+a:focus-visible {
+    outline: 2px solid #c7a5ff;
+    outline-offset: 3px;
+}

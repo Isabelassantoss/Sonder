@@ -36,9 +36,7 @@ $musica = buscarPorId($conexao, $id);
 
             <h1>Atualizar avaliação</h1>
 
-            <p class="subtitulo">
-                Altere sua avaliação sobre essa música.
-            </p>
+            <p class="subtitulo"> Altere sua avaliação sobre essa música. </p>
 
             <form action="" method="post">
 
@@ -135,26 +133,15 @@ $musica = buscarPorId($conexao, $id);
 
                 <label>Comentário</label>
 
-                <textarea
-                    name="comentario"
-                    placeholder="O que você achou dessa música?"
-                    required
-                ><?php echo $musica['comentario']; ?></textarea>
+                <textarea  name="comentario" placeholder="O que você achou dessa música?" required ><?php echo $musica['comentario']; ?></textarea>
 
-                <input
-                    type="submit"
-                    value="Atualizar avaliação"
-                >
+                <input type="submit" value="Atualizar avaliação">
 
             </form>
 
-            <a class="avaliacoes" href="select.php">
-                Ver avaliações
-            </a>
+            <a class="avaliacoes" href="select.php"> Ver avaliações</a>
 
-            <a class="voltar" href="home.php">
-                Voltar
-            </a>
+            <a class="voltar" href="home.php">Voltar</a>
 
             <?php
 

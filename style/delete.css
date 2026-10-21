@@ -10,67 +10,72 @@
 }
 
 body {
-    background: #111315;
-    color: #e8e8e8;
-    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px 15px;
+    background:
+        radial-gradient(ellipse at top, #21192b 0%, #111315 55%);
+    color: #f2f0f5;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 
 /* =========================
    CAIXA DE EXCLUSÃO
 ========================= */
 
 .container-delete {
-    width: 90%;
-    max-width: 500px;
-    background: #181b1e;
-    border: 1px solid #292d31;
-    border-radius: 12px;
-    padding: 40px;
-
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 35px;
+    background: linear-gradient(145deg, #1c1a21, #19171f);
+    border: 1px solid #393142;
+    border-radius: 15px;
     text-align: center;
-
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.3);
 }
-
 
 /* =========================
    ÍCONE
 ========================= */
 
 .icone-delete {
-    font-size: 42px;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    background: #292032;
+    border: 1px solid #49365d;
+    border-radius: 50%;
+    color: #c5a7e8;
+    font-size: 34px;
 }
-
 
 /* =========================
    TÍTULO
 ========================= */
 
 .container-delete h1 {
-    font-size: 28px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #f8f5fc;
+    font-size: 27px;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
 }
-
 
 /* =========================
    TEXTO
 ========================= */
 
 .container-delete p {
-    color: #aeb3b7;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+    color: #b9b1c2;
+    font-size: 14px;
+    line-height: 1.8;
 }
-
 
 /* =========================
    BOTÕES
@@ -82,52 +87,44 @@ body {
     gap: 12px;
 }
 
-
 /* Botão excluir */
 
 .btn-excluir {
-    background: #e85d5d;
-    color: white;
-
-    border: none;
-    border-radius: 6px;
-
     padding: 12px 22px;
-
+    background: #73569c;
+    color: #ffffff;
+    border: 1px solid #73569c;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: bold;
-
     cursor: pointer;
-
-    transition: 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-excluir:hover {
-    background: #f06b6b;
+    background: #8669b0;
+    border-color: #8669b0;
     transform: translateY(-1px);
 }
-
 
 /* Botão cancelar */
 
 .btn-cancelar {
-    background: #292d31;
-    color: #e8e8e8;
-
-    text-decoration: none;
-
-    border-radius: 6px;
-
     padding: 12px 22px;
-
+    background: #211d27;
+    color: #d5c5e6;
+    border: 1px solid #40364b;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: bold;
-
-    transition: 0.2s;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
 .btn-cancelar:hover {
-    background: #353a3f;
+    background: #30253c;
+    border-color: #73569c;
+    color: #ffffff;
 }
 
 /* =========================
@@ -135,9 +132,13 @@ body {
 ========================= */
 
 @media (max-width: 500px) {
-
     .container-delete {
-        padding: 30px 20px;
+        padding: 32px 22px;
+        border-radius: 12px;
+    }
+
+    .container-delete h1 {
+        font-size: 24px;
     }
 
     .botoes {
@@ -146,6 +147,18 @@ body {
 
     .btn-excluir,
     .btn-cancelar {
+        display: block;
         width: 100%;
+        text-align: center;
     }
+}
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+
+.btn-excluir:focus-visible,
+.btn-cancelar:focus-visible {
+    outline: 2px solid #b69add;
+    outline-offset: 4px;
 }

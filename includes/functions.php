@@ -146,11 +146,63 @@ function relatorio($conexao, $usuario_id)
             echo '<a class="excluir" href="delete.php?id=' . $musica['id'] . '">';
             echo '🗑️ Excluir';
             echo '</a>';
-
+    
+            echo '</div>';
+        
         }
 
         echo '</div>';
     }
+}
+
+
+function estatisticas($conexao)
+{
+    $sql = "SELECT COUNT(*) FROM musicas";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $total = $stmt->fetchColumn();
+
+    $sql = "SELECT MAX(nota) FROM musicas";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $melhorNota = $stmt->fetchColumn();
+
+    $sql = "SELECT titulo, artista, nota
+            FROM musicas
+            ORDER BY nota DESC, id DESC
+            LIMIT 3";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $melhores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo '<section class="estatisticas">';
+
+    echo '<div class="estatistica-card">';
+    echo '<p>🎵 Total de avaliações</p>';
+    echo '<h2>' . $total . '</h2>';
+    echo '</div>';
+
+    echo '<div class="estatistica-card">';
+    echo '<p>⭐ Maior nota</p>';
+    echo '<h2>' . ($melhorNota !== null ? $melhorNota : 0) . ' / 5</h2>';
+    echo '</div>';
+
+    echo '</section>';
+
+    echo '<section class="ranking-musicas">';
+    echo '<h2>🏆 Músicas mais bem avaliadas</h2>';
+
+    foreach ($melhores as $musica) {
+        echo '<div class="musica-ranking">';
+        echo '<h3>' . $musica['titulo'] . '</h3>';
+        echo '<p>' . $musica['artista'] . '</p>';
+        echo '<p>★ ' . $musica['nota'] . '</p>';
+        echo '</div>';
+    }
+
+    echo '</section>';
 }
 
 function cadastre_user($conexao, $nome, $email, $senha)
