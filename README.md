@@ -10,193 +10,221 @@ Plataforma web para avaliar, comentar e descobrir músicas, desenvolvida com PHP
 4. [Requisitos funcionais](#-4-requisitos-funcionais)
 5. [Requisitos não funcionais](#-5-requisitos-não-funcionais)
 6. [Banco de dados](#-6-banco-de-dados)
-7. [Organização dos arquivos](#-7-organização-dos-arquivos)
+7. [Organização dos arquivos](#-7-organização-dos-arquinos)
 8. [Como executar o projeto](#-8-como-executar-o-projeto)
 9. [Testando o sistema](#-9-testando-o-sistema)
+
+
 
 ---
 
 ## 🎵 1. Sobre o projeto
 
-O **Sonder** é um site para pessoas que gostam de música e querem compartilhar suas opiniões sobre o que escutam. Inspirado no Letterboxd, o projeto permite avaliar músicas, escrever comentários e consultar avaliações.
+O **Sonder** é um site para pessoas que gostam de música e querem compartilhar suas opiniões sobre o que escutam.
 
-**Objetivo:** desenvolver uma plataforma de avaliações musicais utilizando HTML, CSS, PHP e PostgreSQL.
+Inspirado no Letterboxd, o projeto permite avaliar músicas, escrever comentários e consultar avaliações.
+
+O site possui um visual escuro, detalhes em roxo e elementos inspirados no universo musical.
+
+**Objetivo:** desenvolver uma plataforma de avaliações musicais utilizando conhecimentos de programação, desenvolvimento web e banco de dados.
 
 ## ✨ 2. Funcionalidades
+
+O Sonder possui as seguintes funcionalidades:
 
 - Cadastro de usuários.
 - Login e logout.
 - Cadastro de músicas e avaliações.
 - Notas de 0 a 5 estrelas.
 - Comentários sobre as músicas.
-- Consulta, edição e exclusão de avaliações.
+- Consulta de avaliações.
+- Edição de avaliações.
+- Exclusão de avaliações.
 
 ## 💻 3. Tecnologias utilizadas
 
 | Tecnologia | Utilização |
 |---|---|
-| HTML5 e CSS3 | Estrutura e aparência das páginas. |
+| HTML5 | Estrutura das páginas. |
+| CSS3 | Aparência do site. |
 | PHP | Funcionamento do sistema. |
 | PostgreSQL | Armazenamento dos dados. |
-| PDO | Conexão entre PHP e PostgreSQL. |
-| Git e GitHub | Versionamento e compartilhamento do código. |
+| PDO | Conexão entre PHP e banco de dados. |
+| Git e GitHub | Armazenamento e versionamento do código. |
 | VS Code | Edição dos arquivos. |
-
-O MobaXterm é opcional: ele pode ser usado para acessar um servidor remoto, mas não é necessário para executar o projeto localmente.
+| MobaXterm | Acesso ao servidor remoto, quando necessário. |
 
 ## 📋 4. Requisitos funcionais
 
+Os requisitos funcionais descrevem o que o sistema permite fazer.
+
 | Código | Requisito | Descrição |
 |---|---|---|
-| RF01 | Página inicial | Apresentar o site e suas opções. |
+| RF01 | Página inicial | Apresentar o site e suas principais opções. |
 | RF02 | Cadastro de usuários | Permitir criar uma conta. |
-| RF03 | Login e logout | Entrar e sair da conta. |
-| RF04 | Controle de acesso | Proteger páginas que exigem autenticação. |
-| RF05 | Cadastro de avaliações | Cadastrar músicas com nota e comentário. |
+| RF03 | Login | Permitir entrar na conta cadastrada. |
+| RF04 | Controle de acesso | Restringir o acesso às páginas protegidas. |
+| RF05 | Cadastro de avaliações | Permitir cadastrar músicas com nota e comentário. |
 | RF06 | Consulta de avaliações | Exibir as avaliações cadastradas. |
-| RF07 | Notas em estrelas | Mostrar a nota em formato de estrelas. |
-| RF08 | Edição | Permitir editar avaliações. |
+| RF07 | Notas em estrelas | Mostrar a nota da música em formato de estrelas. |
+| RF08 | Edição | Permitir editar avaliações existentes. |
 | RF09 | Exclusão | Permitir excluir avaliações. |
-| RF10 | Identificação do usuário | Relacionar a avaliação ao usuário responsável. |
+| RF10 | Identificação do usuário | Relacionar cada avaliação ao usuário responsável. |
+| RF11 | Logout | Permitir sair da conta. |
 
 ## ⚙️ 5. Requisitos não funcionais
 
+Os requisitos não funcionais descrevem características de funcionamento, aparência e organização do sistema.
+
 | Código | Categoria | Descrição |
 |---|---|---|
-| RNF01 | Usabilidade | Apresentar interface simples. |
+| RNF01 | Usabilidade | Apresentar uma interface simples e fácil de utilizar. |
 | RNF02 | Interface | Utilizar tema escuro e detalhes em roxo. |
-| RNF03 | Organização | Manter PHP e CSS em pastas organizadas. |
-| RNF04 | Armazenamento | Utilizar PostgreSQL. |
-| RNF05 | Segurança | Verificar autenticação nas páginas protegidas. |
-| RNF06 | Conexão | Utilizar PDO para conectar ao banco. |
-| RNF07 | Manutenção | Facilitar a localização dos arquivos. |
-| RNF08 | Compatibilidade | Executar em ambiente com PHP, extensão PDO PostgreSQL e PostgreSQL configurados. |
+| RNF03 | Organização | Manter os arquivos PHP e CSS organizados em pastas. |
+| RNF04 | Armazenamento | Utilizar PostgreSQL para guardar os dados. |
+| RNF05 | Segurança | Verificar a autenticação nas páginas protegidas. |
+| RNF06 | Conexão | Utilizar PDO para conectar o PHP ao PostgreSQL. |
+| RNF07 | Manutenção | Facilitar a localização e a alteração dos arquivos. |
+| RNF08 | Compatibilidade | Permitir a execução em um ambiente com PHP e PostgreSQL configurados. |
 
 ## 🗄️ 6. Banco de dados
 
-O projeto utiliza um banco PostgreSQL chamado `sonder`, com duas tabelas principais:
+O projeto utiliza o PostgreSQL e um banco de dados chamado `sonder`.
 
-- **`usuarios`**: armazena nome, e-mail e senha das contas.
-- **`musicas`**: armazena título, artista, álbum, nota, comentário e `usuario_id`, que relaciona a avaliação ao usuário.
+O banco possui duas tabelas principais:
 
-O arquivo `database/dump.sql` contém a estrutura inicial do banco, sem contas ou avaliações pessoais de teste.
+**Tabela `usuarios` 👤**
+
+Armazena os dados das contas cadastradas, como nome, e-mail e senha.
+
+**Tabela `musicas` 🎵**
+
+Armazena os dados das avaliações:
+
+- `id`: identificador da avaliação.
+- `titulo`: título da música.
+- `artista`: nome do artista.
+- `album`: nome do álbum.
+- `nota`: nota atribuída.
+- `comentario`: opinião do usuário.
+- `usuario_id`: identificador de quem cadastrou a avaliação.
+
+O campo `usuario_id` relaciona as avaliações aos usuários cadastrados.
 
 ## 📁 7. Organização dos arquivos
 
-A estrutura principal do projeto inclui:
+O projeto está dividido em pastas para facilitar a localização dos arquivos.
+
+```text
+Sonder/
+├── app/
+│   ├── create.php
+│   ├── select.php
+│   ├── update.php
+│   └── delete.php
+├── database/
+│   ├── connect.php
+│   └── dump.sql
+├── includes/
+│   └── functions.php
+├── login/
+├── style/
+├── imagens/
+├── assets/
+├── index.php
+└── documentacao.md
+```
+
+*Observação: os arquivos e as pastas devem corresponder à versão atual do projeto no GitHub.*
 
 - `app/`: páginas de cadastro, consulta, edição e exclusão.
-- `database/`: conexão e estrutura do banco de dados.
-- `includes/`: funções do sistema.
+- `database/`: conexão e arquivos do banco de dados.
+- `includes/`: funções utilizadas pelo sistema.
 - `login/`: arquivos de autenticação.
 - `style/`: arquivos CSS.
-- `imagens/` e `assets/`: imagens e recursos visuais.
+- `imagens/` e `assets/`: imagens e outros recursos visuais.
 - `index.php`: página inicial.
+- `documentacao.md`: documentação do projeto.
 
 ## 🚀 8. Como executar o projeto
 
-Estes passos permitem executar o Sonder no próprio computador. Não é necessário usar o MobaXterm para a instalação local.
+Siga os passos abaixo para baixar e executar o Sonder no seu computador.
 
-### 8.1. Requisitos
+### 8.1. O que você precisa
 
-Instale:
-- [Git](https://git-scm.com/downloads)
-- [PHP](https://www.php.net/downloads) com as extensões `PDO` e `pdo_pgsql`
-- [PostgreSQL](https://www.postgresql.org/download/)
-- Um navegador de internet
+Antes de começar, instale ou tenha acesso a:
 
-Confira as extensões do PHP com:
+- Git.
+- PHP com a extensão `pdo_pgsql`.
+- PostgreSQL.
+- Navegador de internet.
+- VS Code ou outro editor de código.
 
-```bash
-php -m
-```
+O MobaXterm pode ser utilizado para acessar um servidor remoto, caso o banco de dados esteja em outra máquina.
 
-Na lista, confirme que aparecem `PDO` e `pdo_pgsql`.
+### 8.2. Baixar os arquivos
 
-### 8.2. Baixar o projeto
-
-No PowerShell (Windows), Terminal (Linux) ou terminal do VS Code, execute:
+Abra o terminal do VS Code ou o PowerShell e execute:
 
 ```bash
 git clone https://github.com/Isabelassantoss/Sonder.git
+```
+
+Entre na pasta do projeto:
+
+```bash
 cd Sonder
 ```
 
-Entre na pasta que contém `index.php`, `database`, `app` e `login`. Se essas pastas estiverem dentro de outra pasta chamada `Sonder`, entre nela também.
+### 8.3. Criar o usuário e o banco de dados 🗄️
 
-### 8.3. Criar usuário e banco de dados
-
-Crie o usuário e o banco usando uma conta administrativa do PostgreSQL. Os comandos dependem do sistema operacional.
-
-**Windows:** abra o SQL Shell (psql) ou o pgAdmin e conecte-se como administrador do PostgreSQL. Execute cada comando SQL separadamente:
-
-```sql
-CREATE USER sonder_user WITH PASSWORD 'escolha_uma_senha';
-CREATE DATABASE sonder OWNER sonder_user;
-```
-
-Substitua `escolha_uma_senha` por uma senha criada para sua instalação. Se o usuário ou o banco já existir, não repita o comando; verifique a configuração existente.
-
-**Linux:** no terminal, execute:
+No terminal, execute o comando abaixo para acessar o PostgreSQL e criar o usuário `sonder_user`:
 
 ```bash
-sudo -u postgres psql
+sudo -u postgres psql -c "CREATE USER sonder_user WITH PASSWORD 'sonder123';"
 ```
 
-No prompt `postgres=#`, execute os dois comandos SQL acima, um de cada vez. Depois, saia com:
+Agora, crie o banco de dados `sonder`:
 
-```sql
-\q
+```bash
+sudo -u postgres psql -c "CREATE DATABASE sonder OWNER sonder_user;"
 ```
 
-### 8.4. Importar a estrutura do banco
+Esses comandos criam o usuário e o banco de dados utilizados pelo projeto.
 
-No terminal, na pasta principal do projeto, execute:
+**Importante:** se o usuário ou o banco já existir, não execute os comandos novamente. Utilize as configurações existentes ou verifique o ambiente antes de continuar.
+
+### 8.4. Restaurar o banco de dados 📥
+
+Se o arquivo `database/dump.sql` estiver disponível no projeto, execute:
 
 ```bash
 psql -h localhost -U sonder_user -d sonder -f database/dump.sql
 ```
 
-Digite a senha definida para `sonder_user` quando for solicitada. O banco deve existir antes da importação. O arquivo disponibilizado cria a estrutura das tabelas, sem importar dados pessoais ou avaliações de teste.
+Digite a senha do usuário quando for solicitada.
 
-### 8.5. Configurar a conexão
+### 8.5. Configurar a conexão 🔗
 
-Abra `database/connect.php` e confira se os valores correspondem à sua instalação:
+Abra o arquivo `database/connect.php` e confira se os dados de conexão correspondem ao banco criado:
 
-```php
-<?php
-$host = 'localhost';
-$dbname = 'sonder';
-$user = 'sonder_user';
-$pass = 'SUA_SENHA_DO_BANCO';
+- Banco de dados: `sonder`
+- Usuário: `sonder_user`
+- Senha: a senha definida na criação do usuário.
+- Servidor: `localhost`, se o PostgreSQL estiver no próprio computador.
 
-try {
-    $conexao = new PDO(
-        "pgsql:host=$host;dbname=$dbname",
-        $user,
-        $pass
-    );
-} catch (PDOException $e) {
-    exit("Não foi possível conectar ao banco de dados.");
-}
-?>
-```
+### 8.6. Iniciar o site 🌐
 
-Troque `SUA_SENHA_DO_BANCO` pela senha que você definiu. Não publique senhas pessoais no repositório.
-
-### 8.6. Iniciar o site
-
-No terminal, entre na pasta que contém o arquivo `index.php` e execute:
+Na pasta principal do projeto, execute:
 
 ```bash
 php -S localhost:8000
 ```
 
-Mantenha o terminal aberto e acesse [http://localhost:8000](http://localhost:8000).
+Mantenha o terminal aberto e acesse no navegador:
 
-Se o comando `php` não for reconhecido, configure o PHP no PATH ou execute o PHP pelo caminho completo. Se a página inicial não abrir, confira se o terminal está na pasta correta.
+http://localhost:8000
 
-**Importante:** o servidor embutido do PHP serve para desenvolvimento e demonstração local; não deve ser usado como hospedagem pública na internet.
 
 ## ✅ 9. Testando o sistema
 
@@ -204,16 +232,17 @@ Depois de abrir o site, verifique se é possível:
 
 - [ ] Criar uma conta e fazer login.
 - [ ] Cadastrar uma avaliação musical.
-- [ ] Consultar avaliações.
-- [ ] Visualizar notas em estrelas.
+- [ ] Consultar as avaliações.
+- [ ] Visualizar as notas em estrelas.
 - [ ] Editar uma avaliação.
 - [ ] Excluir uma avaliação.
 - [ ] Sair da conta.
 
-Se ocorrer um erro, confira se o PostgreSQL está em execução, se o PHP possui a extensão `pdo_pgsql`, se a senha em `database/connect.php` está correta e se o banco foi importado.
+Se ocorrer algum erro, confira a conexão com o banco de dados e as configurações do PHP.
 
 ---
 
 ## Considerações finais
 
-O Sonder reúne cadastro de usuários, avaliações musicais e gerenciamento de dados em uma plataforma com identidade visual própria. O GitHub disponibiliza o código; para usar o sistema, cada computador precisa ter PHP e PostgreSQL configurados, ou o projeto deve ser hospedado em um servidor apropriado.
+O Sonder foi desenvolvido para colocar em prática conhecimentos de HTML, CSS, PHP e PostgreSQL.
+O projeto reúne cadastro de usuários, avaliações musicais e gerenciamento de dados em uma plataforma com identidade visual própria.
