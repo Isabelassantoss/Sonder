@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'sonder';
 $user = 'sonder_user';
-$pass = 'SUA_SENHA_DO_BANCO';
+$pass = 'sonder123';
 
 try {
     $conexao = new PDO(
