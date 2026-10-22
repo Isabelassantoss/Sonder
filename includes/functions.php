@@ -168,8 +168,7 @@ function estatisticas($conexao)
     $stmt = $conexao->prepare($sql);
     $stmt->execute();
     $melhorNota = $stmt->fetchColumn();
-
-    // Buscar a menor nota
+    
     $sql = "SELECT MIN(nota) FROM musicas";
     $stmt = $conexao->prepare($sql);
     $stmt->execute();
