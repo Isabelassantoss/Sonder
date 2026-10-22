@@ -1,4 +1,3 @@
-
 <?php
 $host = 'localhost';
 $dbname = 'sonder';
@@ -12,8 +11,9 @@ try {
         $pass
     );
 
-} catch (PDOException $e) {
-    echo "Erro: " . $e->getMessage();
-}
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+} catch (PDOException $e) {
+    exit("Não foi possível conectar ao banco de dados. Confira se o PostgreSQL está em execução e se os dados em database/connect.php estão corretos.");
+}
 ?>

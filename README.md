@@ -178,7 +178,7 @@ cd Sonder
 
 ### 8.3. Criar o usuário e o banco de dados 🗄️
 
-No terminal do Linux, execute o comando abaixo para acessar o PostgreSQL e criar o usuário `sonder_user`:
+No terminal, execute o comando abaixo para acessar o PostgreSQL e criar o usuário `sonder_user`:
 
 ```bash
 sudo -u postgres psql -c "CREATE USER sonder_user WITH PASSWORD 'sonder123';"
@@ -223,7 +223,7 @@ php -S localhost:8000
 
 Mantenha o terminal aberto e acesse no navegador:
 
-http://localhost:8000
+http://localhost:8000/Sonder
 
 
 ## ✅ 9. Testando o sistema
