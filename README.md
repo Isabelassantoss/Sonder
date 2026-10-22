@@ -218,7 +218,7 @@ Abra o arquivo `database/connect.php` e confira se os dados de conexão correspo
 Na pasta principal do projeto, execute:
 
 ```bash
-php -S localhost:8000
+php -S localhost:8000/Sonder
 ```
 
 Mantenha o terminal aberto e acesse no navegador:
