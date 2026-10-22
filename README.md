@@ -259,19 +259,6 @@ No navegador, acesse:
 
 http://localhost:8000
 
-### 8.7. Verificar o funcionamento ✅
-
-Depois de abrir o site, teste as principais funcionalidades:
-
-- [ ] A página inicial abre corretamente.
-- [ ] É possível cadastrar um usuário.
-- [ ] É possível fazer login e logout.
-- [ ] É possível cadastrar uma avaliação musical.
-- [ ] As avaliações aparecem na página de consulta.
-- [ ] É possível editar e excluir avaliações.
-
-Se o site não funcionar, confira se o PostgreSQL está em execução, se o PHP possui a extensão `pdo_pgsql`, se os dados de conexão estão corretos e se a estrutura do banco foi importada sem erros.
-
 ## ✅ 9. Testando o sistema
 
 Depois de abrir o site, verifique se é possível:
