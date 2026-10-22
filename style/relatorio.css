@@ -354,6 +354,17 @@ footer p {
     gap: 18px;
     margin: 30px 0;
 }
+.estatisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 700px) {
+    .estatisticas {
+        grid-template-columns: 1fr;
+    }
+}
 
 .estatistica-card {
     padding: 25px 20px;

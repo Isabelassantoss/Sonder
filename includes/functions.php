@@ -156,6 +156,7 @@ function relatorio($conexao, $usuario_id)
 }
 
 
+
 function estatisticas($conexao)
 {
     $sql = "SELECT COUNT(*) FROM musicas";
@@ -167,6 +168,12 @@ function estatisticas($conexao)
     $stmt = $conexao->prepare($sql);
     $stmt->execute();
     $melhorNota = $stmt->fetchColumn();
+
+    // Buscar a menor nota
+    $sql = "SELECT MIN(nota) FROM musicas";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $piorNota = $stmt->fetchColumn();
 
     $sql = "SELECT titulo, artista, nota
             FROM musicas
@@ -189,6 +196,11 @@ function estatisticas($conexao)
     echo '<h2>' . ($melhorNota !== null ? $melhorNota : 0) . ' / 5</h2>';
     echo '</div>';
 
+    echo '<div class="estatistica-card">';
+    echo '<p>💔 Menor nota</p>';
+    echo '<h2>' . ($piorNota !== null ? $piorNota : 0) . ' / 5</h2>';
+    echo '</div>';
+
     echo '</section>';
 
     echo '<section class="ranking-musicas">';
@@ -196,14 +208,15 @@ function estatisticas($conexao)
 
     foreach ($melhores as $musica) {
         echo '<div class="musica-ranking">';
-        echo '<h3>' . $musica['titulo'] . '</h3>';
-        echo '<p>' . $musica['artista'] . '</p>';
+        echo '<h3>' . htmlspecialchars($musica['titulo']) . '</h3>';
+        echo '<p>' . htmlspecialchars($musica['artista']) . '</p>';
         echo '<p>★ ' . $musica['nota'] . '</p>';
         echo '</div>';
     }
 
     echo '</section>';
 }
+
 
 function cadastre_user($conexao, $nome, $email, $senha)
 {
