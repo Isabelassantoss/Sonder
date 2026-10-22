@@ -148,21 +148,21 @@ Sonder/
 
 ## 🚀 8. Como executar o projeto
 
-Siga os passos abaixo para baixar e executar o Sonder no seu computador.
+Siga os passos abaixo para baixar e executar o Sonder no seu próprio computador.
 
 ### 8.1. O que você precisa
 
-Antes de começar, instale ou tenha acesso a:
+Antes de começar, instale ou tenha configurado:
 
-- Git.
-- PHP com a extensão `pdo_pgsql`.
-- PostgreSQL.
-- Navegador de internet.
-- VS Code ou outro editor de código.
+- **Git:** para baixar os arquivos do projeto.
+- **PHP:** com as extensões `PDO` e `pdo_pgsql`.
+- **PostgreSQL:** para armazenar os dados.
+- **Navegador de internet:** para acessar o site.
+- **VS Code ou outro editor:** para visualizar e editar os arquivos.
 
-O MobaXterm pode ser utilizado para acessar um servidor remoto, caso o banco de dados esteja em outra máquina.
+O MobaXterm é opcional. Ele pode ser utilizado para acessar um servidor Linux remoto, mas não é necessário para executar o projeto localmente.
 
-### 8.2. Baixar os arquivos
+### 8.2. Baixar os arquivos 📥
 
 Abra o terminal do VS Code ou o PowerShell e execute:
 
@@ -170,61 +170,107 @@ Abra o terminal do VS Code ou o PowerShell e execute:
 git clone https://github.com/Isabelassantoss/Sonder.git
 ```
 
-Entre na pasta do projeto:
+Entre na pasta baixada:
 
 ```bash
 cd Sonder
 ```
 
+**Importante:** execute os próximos comandos na pasta que contém o arquivo `index.php` e as pastas `database`, `app` e `login`. Se essas pastas estiverem dentro de outra pasta chamada `Sonder`, entre nela também.
+
 ### 8.3. Criar o usuário e o banco de dados 🗄️
 
-No terminal, execute o comando abaixo para acessar o PostgreSQL e criar o usuário `sonder_user`:
+O banco utilizado pelo projeto se chama `sonder`, e o usuário de conexão se chama `sonder_user`.
 
-```bash
-sudo -u postgres psql -c "CREATE USER sonder_user WITH PASSWORD 'sonder123';"
+**No Windows:**
+
+Abra o PowerShell ou o terminal do VS Code e execute:
+
+```powershell
+psql -U postgres -d postgres
 ```
 
-Agora, crie o banco de dados `sonder`:
+Digite a senha do administrador do PostgreSQL quando for solicitada. Quando aparecer o prompt `postgres=#`, execute um comando por vez:
 
-```bash
-sudo -u postgres psql -c "CREATE DATABASE sonder OWNER sonder_user;"
+```sql
+CREATE USER sonder_user WITH PASSWORD 'sonder123';
 ```
 
-Esses comandos criam o usuário e o banco de dados utilizados pelo projeto.
+```sql
+CREATE DATABASE sonder OWNER sonder_user;
+```
 
-**Importante:** se o usuário ou o banco já existir, não execute os comandos novamente. Utilize as configurações existentes ou verifique o ambiente antes de continuar.
+Para sair do PostgreSQL, digite:
 
-### 8.4. Restaurar o banco de dados 📥
+```sql
+\q
+```
 
-Se o arquivo `database/dump.sql` estiver disponível no projeto, execute:
+**No Linux:**
+
+Abra o terminal e execute:
+
+```bash
+sudo -u postgres psql
+```
+
+Quando aparecer o prompt `postgres=#`, execute os mesmos dois comandos SQL apresentados na seção do Windows, um por vez. Depois, saia com:
+
+```sql
+\q
+```
+
+**Importante:** se o usuário ou o banco já existir, não crie novamente. Verifique se as configurações existentes correspondem às utilizadas pelo projeto.
+
+### 8.4. Importar a estrutura do banco de dados 📦
+
+Na pasta principal do projeto, execute:
 
 ```bash
 psql -h localhost -U sonder_user -d sonder -f database/dump.sql
 ```
 
-Digite a senha do usuário quando for solicitada.
+Digite a senha definida para `sonder_user` quando for solicitada.
+
+O banco `sonder` precisa estar criado antes da importação. O arquivo `database/dump.sql` contém a estrutura inicial das tabelas utilizadas pelo sistema.
+
+Se ocorrer um erro durante a importação, confira a mensagem exibida antes de continuar.
 
 ### 8.5. Configurar a conexão 🔗
 
-Abra o arquivo `database/connect.php` e confira se os dados de conexão correspondem ao banco criado:
+Abra o arquivo `database/connect.php` no editor de código e confira os dados de conexão:
 
-- Banco de dados: `sonder`
-- Usuário: `sonder_user`
-- Senha: a senha definida na criação do usuário.
-- Servidor: `localhost`, se o PostgreSQL estiver no próprio computador.
+- **Servidor:** `localhost`, se o PostgreSQL estiver no próprio computador.
+- **Banco de dados:** `sonder`.
+- **Usuário:** `sonder_user`.
+- **Senha:** `sonder123`.
 
 ### 8.6. Iniciar o site 🌐
 
-Na pasta principal do projeto, execute:
+No terminal, entre na pasta que contém o arquivo `index.php` e execute:
 
 ```bash
 php -S localhost:8000
 ```
 
-Mantenha o terminal aberto e acesse no navegador:
+Mantenha o terminal aberto enquanto estiver utilizando o site.
 
-http://localhost:8000/Sonder
+No navegador, acesse:
 
+http://localhost:8000
+
+### 8.7. Verificar o funcionamento ✅
+
+Depois de abrir o site, teste as principais funcionalidades:
+
+- [ ] A página inicial abre corretamente.
+- [ ] É possível cadastrar um usuário.
+- [ ] É possível fazer login e logout.
+- [ ] É possível cadastrar uma avaliação musical.
+- [ ] As avaliações aparecem na página de consulta.
+- [ ] É possível editar e excluir avaliações.
+
+Se o site não funcionar, confira se o PostgreSQL está em execução, se o PHP possui a extensão `pdo_pgsql`, se os dados de conexão estão corretos e se a estrutura do banco foi importada sem erros.
 
 ## ✅ 9. Testando o sistema
 
